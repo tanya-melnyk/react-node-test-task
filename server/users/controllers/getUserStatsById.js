@@ -38,7 +38,7 @@ const createUserWithStats = (user, stats, dateFrom, dateTo) => {
   const userStats = getUserStats(stats, user.id, dateFrom, dateTo);
 
   return {
-    user_name: `${user.first_name} ${user.last_name}`,
+    name: `${user.first_name} ${user.last_name}`,
     clicks: userStats.clicks,
     page_views: userStats.page_views
   };
@@ -70,7 +70,7 @@ const getUserStatsById = (req, res) => {
 
   const response = {
     status: "OK",
-    users: userWithStats
+    user: userWithStats
   };
 
   res.status(200).json(response);

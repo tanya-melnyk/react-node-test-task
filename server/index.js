@@ -11,11 +11,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(corsMiddleware());
 app.use(express.json());
 
-// app.get('/api/greeting', (req, res) => {
-//   const name = req.query.name || 'World';
-//   res.setHeader('Content-Type', 'application/json');
-//   res.send(JSON.stringify({ greeting: `Hello ${name}!` }));
-// });
+app.get("/api/greeting", (req, res) => {
+  const name = req.query.name || "World";
+  res.setHeader("Content-Type", "application/json");
+  res.send(JSON.stringify({ greeting: `Hello ${name}!` }));
+});
 app.get("/api/users", getAllUsers);
 app.get("/api/users/:id", getUserStatsById);
 app.get("/", (req, res) => {
