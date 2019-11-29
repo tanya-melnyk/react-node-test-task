@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import T from "prop-types";
 
+import Breadcrumbs from "../components/Breadcrumbs";
 import StatsChart from "../components/StatsChart";
 
 import formatUserStats from "../services/formatUserStats";
 import getQuery from "../services/getQuery";
-import routes from "../routes";
 import usersStatsApi from "../services/usersStatsApi";
 
 export default class UserPage extends Component {
@@ -65,41 +65,26 @@ export default class UserPage extends Component {
     }
   };
 
-  handleGoBack = () => {
-    const { history, location } = this.props;
-    const { state } = location;
-
-    if (state) {
-      history.push(state.from);
-      return;
-    }
-
-    history.push(routes.USERS);
-  };
-
   render() {
     const { user, error, loading } = this.state;
 
     return (
       <div>
-        <button type="button" onClick={this.handleGoBack}>
-          <span role="img" aria-label="Left Arrow">
-            &#x2B05;
-          </span>
-          <span> Go back</span>
-        </button>
-
         {error && <p>{error.message}</p>}
 
         {loading && <p>Loading...</p>}
 
         {user && (
-          <article>
-            <h2>{user.name}</h2>
+          <>
+            <Breadcrumbs userName={user.name} />
 
-            <StatsChart name="Clicks" data={user.clicks} />
-            <StatsChart name="Views" data={user.page_views} />
-          </article>
+            <article>
+              <h2>{user.name}</h2>
+
+              <StatsChart name="Clicks" data={user.clicks} />
+              <StatsChart name="Views" data={user.page_views} />
+            </article>
+          </>
         )}
       </div>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import T from "prop-types";
 
+import Breadcrumbs from "../components/Breadcrumbs";
 import Paginator from "../components/Paginator";
 import UsersTable from "../components/UsersTable";
 
@@ -77,18 +78,6 @@ export default class UsersStatsPage extends Component {
     });
   };
 
-  handleGoBack = () => {
-    const { history, location } = this.props;
-    const { state } = location;
-
-    if (state) {
-      history.push(state.from);
-      return;
-    }
-
-    history.push(routes.HOME);
-  };
-
   handlePageClick = data => {
     let page = data.selected + 1;
 
@@ -105,12 +94,7 @@ export default class UsersStatsPage extends Component {
       <div>
         {error && <p>{error.message}</p>}
 
-        <button type="button" onClick={this.handleGoBack}>
-          <span role="img" aria-label="Left Arrow">
-            &#x2B05;
-          </span>
-          <span> Go back</span>
-        </button>
+        <Breadcrumbs />
 
         {loading && <p>Loading...</p>}
 
