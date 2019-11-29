@@ -9,9 +9,25 @@ const getAllUsers = (page, limit) =>
       }
       throw new Error(errMsg);
     })
-    .then(data => data.users)
+    .then(data => data)
     .catch(err => {
       throw err;
     });
 
-export default { getAllUsers };
+const getUserStats = (userId, dateFrom, dateTo) => {
+  console.log(dateFrom, dateTo);
+
+  return fetch(`${apiUri}/${userId}?from=${dateFrom}&to=${dateTo}`)
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      }
+      throw new Error(errMsg);
+    })
+    .then(data => data.user)
+    .catch(err => {
+      throw err;
+    });
+};
+
+export default { getAllUsers, getUserStats };

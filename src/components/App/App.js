@@ -7,10 +7,10 @@ import UserPage from "../../pages/UserPage";
 
 import routes from "../../routes";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
-      <main>
+      <main style={{ padding: "50px" }}>
         <Switch>
           <Route path={routes.USER_STATS} component={UserPage} />
           <Route path={routes.USERS} component={UsersStatsPage} />

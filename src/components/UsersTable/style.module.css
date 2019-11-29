@@ -1,0 +1,38 @@
+.usersTable {
+  width: 90%;
+  box-shadow: 0px 1px 4px 0px rgba(184, 184, 184, 1);
+  border-width: 1px;
+  border-collapse: collapse;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.usersTable tr:nth-child(even) {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.usersTable th {
+  padding: 14px 10px;
+  background-color: #3a80ba;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  border-right: 1px solid #fff;
+}
+
+.usersTable th:last-child {
+  border-right: none;
+}
+
+.usersTable td {
+  padding: 10px 10px;
+  font-size: 14px;
+  text-align: center;
+  border-left: 1px solid #fff;
+  border-collapse: collapse;
+  color: #85888a;
+}

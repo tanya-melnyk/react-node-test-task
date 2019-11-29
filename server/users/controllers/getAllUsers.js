@@ -33,7 +33,7 @@ const createUsersWithStats = (users, stats) =>
 
 const getAllUsers = (req, res) => {
   const page = Number(req.query.page) || 1;
-  const limit = Number(req.query.limit) || 20;
+  const limit = Number(req.query.limit) || 50;
 
   const usersData = fs.readFileSync(usersPath);
   const users = JSON.parse(usersData.toString());
@@ -46,6 +46,7 @@ const getAllUsers = (req, res) => {
 
   const response = {
     status: "OK",
+    usersTotalCount: users.length,
     users: usersWithStats
   };
 

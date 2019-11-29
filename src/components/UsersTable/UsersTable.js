@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// import T from "prop-types";
+import T from "prop-types";
 
-import routes from "../../routes";
+import style from "./style.module.css";
 
-const UrersTable = ({ users, location, onRawClick }) => (
-  <table>
+const UrersTable = ({ users, onRowClick }) => (
+  <table className={style.usersTable}>
     <thead>
       <tr>
         <th>Id</th>
@@ -21,7 +20,11 @@ const UrersTable = ({ users, location, onRawClick }) => (
 
     <tbody>
       {users.map(user => (
-        <tr key={user.id} onClick={() => onRawClick(user.id)}>
+        <tr
+          className={style.urersTableRow}
+          key={user.id}
+          onClick={() => onRowClick(user.id)}
+        >
           <td>{user.id}</td>
           <td>{user.first_name}</td>
           <td>{user.last_name}</td>
@@ -36,15 +39,9 @@ const UrersTable = ({ users, location, onRawClick }) => (
   </table>
 );
 
-// UrersTable.propTypes = {
-//   users: T.arrayOf(
-//     T.shape({
-//       id: T.string.isRequired,
-//       first_name: T.string.isRequired,
-//       last_name: T.string.isRequired,
-//       email: T.string.isRequired
-//     }).isRequired
-//   ).isRequired
-// };
+UrersTable.propTypes = {
+  users: T.arrayOf(T.shape()).isRequired,
+  onRowClick: T.func.isRequired
+};
 
 export default UrersTable;
