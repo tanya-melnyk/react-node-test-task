@@ -14,10 +14,8 @@ const getAllUsers = (page, limit) =>
       throw err;
     });
 
-const getUserStats = (userId, dateFrom, dateTo) => {
-  console.log(dateFrom, dateTo);
-
-  return fetch(`${apiUri}/${userId}?from=${dateFrom}&to=${dateTo}`)
+const getUserStats = (userId, dateFrom, dateTo) =>
+  fetch(`${apiUri}/${userId}?from=${dateFrom}&to=${dateTo}`)
     .then(res => {
       if (res.ok) {
         return res.json();
@@ -28,6 +26,5 @@ const getUserStats = (userId, dateFrom, dateTo) => {
     .catch(err => {
       throw err;
     });
-};
 
 export default { getAllUsers, getUserStats };

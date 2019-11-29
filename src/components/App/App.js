@@ -7,20 +7,18 @@ import UserPage from "../../pages/UserPage";
 
 import routes from "../../routes";
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <main style={{ padding: "50px" }}>
-        <Switch>
-          <Route path={routes.USER_STATS} component={UserPage} />
-          <Route path={routes.USERS} component={UsersStatsPage} />
-          <Route path={routes.HOME} component={HomePage} />
+const App = () => (
+  <BrowserRouter>
+    <main style={{ padding: "50px" }}>
+      <Switch>
+        <Route path={routes.USER_STATS} component={UserPage} />
+        <Route path={routes.USERS} component={UsersStatsPage} />
+        <Route path={routes.HOME} component={HomePage} />
 
-          <Redirect to={routes.HOME} />
-        </Switch>
-      </main>
-    </BrowserRouter>
-  );
-}
+        <Redirect to={routes.HOME} />
+      </Switch>
+    </main>
+  </BrowserRouter>
+);
 
 export default App;
