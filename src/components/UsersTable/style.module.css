@@ -7,9 +7,12 @@
   overflow: hidden;
 }
 
+.usersTable tr {
+  cursor: pointer;
+}
+
 .usersTable tr:nth-child(even) {
   background-color: #f1f1f1;
-  cursor: pointer;
 }
 
 .usersTable th {
