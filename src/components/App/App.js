@@ -9,15 +9,13 @@ import routes from "../../routes";
 
 const App = () => (
   <BrowserRouter>
-    <main style={{ padding: "50px" }}>
-      <Switch>
-        <Route path={routes.USER_STATS} component={UserPage} />
-        <Route path={routes.USERS} component={UsersStatsPage} />
-        <Route path={routes.HOME} component={HomePage} />
+    <Switch>
+      <Route path={routes.USER_STATS} component={UserPage} />
+      <Route path={routes.USERS} component={UsersStatsPage} />
+      <Route path={routes.HOME} component={HomePage} />
 
-        <Redirect to={routes.HOME} />
-      </Switch>
-    </main>
+      <Redirect to={routes.HOME} />
+    </Switch>
   </BrowserRouter>
 );
 

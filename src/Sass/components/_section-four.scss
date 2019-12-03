@@ -1,0 +1,137 @@
+.section-four__wrapper {
+  background-color: $main-bg-color;
+  padding-bottom: 42px;
+
+  @media (min-width: $medium-screen-width) {
+    padding: 0 0 64px 0;
+  }
+  @media (min-width: $large-screen-width) {
+    padding: 0 0 110px 0;
+  }
+
+  .section-four__info {
+    @media (min-width: $medium-screen-width) {
+      width: 660px;
+      padding-left: 18px;
+      padding-right: 4px;
+    }
+    @media (min-width: $large-screen-width) {
+      width: 1504px;
+      position: relative;
+      padding: 0 404px 0 54px;
+    }
+  }
+
+  .section-four__title {
+    @include font-settings(1rem, 1.25);
+    color: $primary-light-text;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    margin: 0;
+    padding: 35px 0 22px 0;
+
+    @media (min-width: $medium-screen-width) {
+      @include font-settings(1.375rem, 1.364);
+      padding: 55px 0 32px;
+    }
+    @media (min-width: $large-screen-width) {
+      width: 673px;
+      @include font-settings(1.875rem, 1.167);
+      padding: 96px 0 44px 0;
+      margin: 0 0 0 130px;
+    }
+  }
+
+  .section-four__text {
+    width: 254px;
+    @include font-settings(0.875rem, 1.571);
+    color: $primary-light-text;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 24px;
+    letter-spacing: -0.04em;
+
+    @media (min-width: $medium-screen-width) {
+      width: 380px;
+      @include font-settings(1rem, 1.375);
+      padding-bottom: 24px;
+    }
+
+    @media (min-width: $large-screen-width) {
+      position: absolute;
+      width: 410px;
+      @include font-settings(1.125rem, 1.944);
+      top: 46%;
+      right: 5%;
+    }
+    &::before {
+      @include pseudo;
+      @include size(60px, 2px);
+      background-color: $turquase;
+      margin-bottom: 16px;
+
+      @media (min-width: $medium-screen-width) {
+        margin-bottom: 14px;
+      }
+    }
+
+    &--weight {
+      font-weight: normal;
+    }
+  }
+
+  .section-four__slogan {
+    @extend %section-title;
+    color: $secondary-accent-color;
+    margin: 0;
+    font-weight: 600;
+    padding: 0 0 18px 0;
+
+    @media (min-width: $medium-screen-width) {
+      @include font-settings(2.5rem, 1.25);
+      padding: 0 0 30px 0;
+    }
+
+    @media (min-width: $large-screen-width) {
+      width: 696px;
+      font-size: 3rem;
+      padding: 0 0 58px 0;
+      letter-spacing: -0.04em;
+      margin: 0 0 0 130px ;
+    }
+  }
+
+  .section-four__button {
+    text-align: center;
+
+    .section-four__button__link {
+      @extend %button;
+      @extend %link;
+      @include size(260px, 70px);
+      padding: 25px 0;
+      font-weight: 700;
+      line-height: 1.429;
+      text-transform: uppercase;
+
+      @media (min-width: $medium-screen-width) {
+        padding-left: $large-padding;
+        padding-right: $large-padding;
+        @include size(530px, 70px);
+        margin-right: 106px;
+        font-size: 1.125rem;
+      }
+
+      @media (min-width: $large-screen-width) {
+        padding: 36px 78px;
+        font-size: 1.875rem;
+        @include size(680px, 110px);
+      }
+    }
+  }
+}
+
+.new-line {
+  @media (min-width: $large-screen-width) {
+    display: block;
+  }
+}

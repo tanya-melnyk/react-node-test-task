@@ -1,0 +1,72 @@
+/// FONTS STACKS
+$main-font-stack: "Montserrat", sans-serif;
+
+/// BASIC COLORS
+$white: #ffffff;
+$very-light: #fbfbfb;
+$light: #f1f1f1;
+$light-grey: #cccccc;
+$grey: #b9b9b9;
+$dark-grey: #7e7e7e;
+$dark: #1a1a1a;
+
+$light-blue: #3a80ba;
+$blue: #255d8c;
+$dark-blue: #255d8b;
+$very-dark-blue: #1c3b55;
+
+/// text colors
+$light-text: $white;
+$primary-dark-text: $dark;
+$secondary-dark-text: $grey;
+$blue-text: $light-blue;
+// $light-blue3: $light-blue;
+// $blue1: $blue;
+// $white16: $white;
+// $dark-grey5: $grey;
+// $dark10: $dark;
+// $grey1: $grey;
+
+/// theme colors
+$main-theme-color: $light-blue;
+$main-ligth-theme-color: $white;
+$secondary-ligth-theme-color: $light;
+$grey-accent-color: $light-grey;
+// $tlight-blue5: $light-blue;
+// $twhite5: $white;
+// $tlight5: $light;
+// $light-grey3: $light-grey;
+// $tvery-dark-blue1: $very-dark-blue;
+// $very-light1: $very-light;
+
+// $main-bg-color: $blue;
+// $secondary-bg-color: $light-grey;
+// $primary-accent-color: $orange;
+// $secondary-accent-color: $turquase;
+// $yellow-accent-color: $yellow;
+
+/// BASIC SIZES
+/// Breakpoints
+$medium-screen-width: 768px;
+$large-screen-width: 1200px;
+/// Containers
+$small-container: 320px;
+$medium-container: $medium-screen-width;
+$large-container: $large-screen-width;
+/// Paddings
+$small-padding: 10px;
+$medium-padding: 20px;
+$large-padding: 130px;
+// Font (size = number * 4px)
+$size-4: 16px;
+$size-5: 20px;
+$size-6: 24px;
+$size-8: 32px;
+$size-10: 40px;
+$size-12: 48px;
+$size-14: 56px;
+// Border-radius
+$small-radius: 8px;
+
+$gradient: linear-gradient(93.47deg, $dark-blue 2.29%, $light-blue 96.79%);
+$gradient2: linear-gradient(91.6deg, $dark-blue 9.03%, $light-blue 96.98%);

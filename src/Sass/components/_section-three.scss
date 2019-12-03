@@ -1,0 +1,278 @@
+// SECTION THREE
+.section-three {
+  color: $secondary-dark-text;
+  background: {
+    image: url('../images/section-three/map.png');
+    repeat: no-repeat;
+    position: right 621px;
+  }
+
+  @media (min-width: $medium-screen-width) {
+    background: none;
+  }
+}
+
+.section-three__wrapper {
+  padding-top: 29px;
+  padding-bottom: 34px;
+  
+  @media (min-width: $medium-screen-width) {
+    padding: 46px 34px 51px;
+  }
+
+  @media (min-width: $large-screen-width) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 76px;
+    padding-bottom: 142px;
+    padding-right: $small-padding;
+  }
+}
+
+// INFOGRAPHICS SECTION
+
+// Infohraphics Section Title
+
+.infographics__title {
+  @extend %section-title;
+  margin: 0;
+  padding-right: 42px;
+
+  @media (min-width: $medium-screen-width) 
+    and (max-width: ($large-screen-width - 1)) {
+    margin-bottom: 2rem;
+    padding: 0;
+    text-align: center;
+  }
+
+  @media (min-width: $large-screen-width) {
+    margin-bottom: 4.2rem;
+    padding-right: 200px;
+  }
+}
+
+// Infohraphics Overview Block
+
+.infographics__overview {
+  padding-top: 20px;
+
+  @media (min-width: $medium-screen-width) {
+    padding-top: 46px;
+    padding-bottom: 54px;
+    width: 700px;
+    box-shadow: 0px 15px 46px 0px rgba(0, 0, 0, 0.16),
+      -18px 18px 0px 0px rgb(237, 240, 242);
+  }
+}
+
+.infographics__overview-subtitle {
+  @include font-settings(0.875rem, 1.429);
+  margin: 0 0 18px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+
+  @media (min-width: $medium-screen-width) {
+    @include font-settings(1.125rem, 1.389);
+    margin-bottom: 33px;
+    padding: 0 150px;
+    text-align: center;
+  }
+}
+
+.infographics__inner {
+  padding-left: 16px;
+  
+  @media (min-width: $medium-screen-width) {
+    padding-left: 58px;
+    background: {
+      image: url('../images/section-three/map-blue.png');
+      repeat: no-repeat;
+      position: 335px bottom;
+    }
+  }
+}
+
+// Infohraphics Overview Block List
+
+.infographics__overview-list {
+  @extend %list;
+  margin-bottom: 1.14rem;
+  padding-right: $medium-padding;
+
+  @media (min-width: $medium-screen-width) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+    padding-right: 32px;
+  }
+}
+
+.infographics__overview-item {
+  
+  @media (max-width: ($medium-screen-width - 1px)) {
+    &:not(:last-child) {
+      margin-bottom: 1.32rem;
+    }
+
+    &:nth-child(5) {
+      margin-bottom: 0.9rem;
+    }
+  }
+
+  @media (min-width: $medium-screen-width) {
+    width: 174px;
+
+    &:nth-last-child(n + 4) {
+      margin-bottom: 1.36rem;
+    }
+  }
+}
+
+.infographics__overview-number {
+  @include font-settings(1.875rem, 1);
+  display: block;
+  margin-bottom: 0.31rem;
+  font-weight: bold;
+  letter-spacing: -0.04em;
+  color: $secondary-accent-color;
+}
+
+.infographics__overview-info {
+  margin: 0;
+  line-height: 1.429;
+  letter-spacing: -0.04em;
+
+  @media (min-width: $medium-screen-width) {
+    font-size: 0.875rem;
+    line-height: 1.429;
+  }
+}
+
+// Infohraphics Overview Income Block
+
+.infographics__income {
+  padding-right: $small-padding;
+
+  @media (min-width: $medium-screen-width) {
+    margin-right: 400px;
+  }
+}
+
+.infographics__income-subtitle {
+  margin: 0 0 0.4rem;
+  font-size: 0.875rem;
+  line-height: 1.429;
+  letter-spacing: -0.04em;
+}
+
+// Infohraphics Overview Income Block List
+
+.infographics__income-list {
+  @extend %list;
+  @extend %flex-justify;
+}
+
+.infographics__income-item {
+  width: 106px;
+}
+
+.infographics__overview-number--small {
+  margin-bottom: 0.18rem;
+  font-size: 1.563rem;
+}
+
+.infographics__income-info {
+  @include font-settings(0.625rem, 1.1);
+  margin: 0;
+  letter-spacing: -0.04em;
+}
+
+// OFFERS SECTION
+
+.offers {
+  padding-top: 26px;
+
+  @media (min-width: $medium-screen-width) {
+    padding-top: 44px;
+    padding-left: 39px;
+  }
+  
+  @media (min-width: $large-screen-width) {
+    margin-bottom: -6px;
+    padding-left: 56px;
+  }
+}
+
+// Offers Section Title
+
+.offers__title {
+  @extend %section-title;
+  margin: 0 0 0.78rem;
+
+  @media (min-width: $medium-screen-width) {
+    margin-bottom: 1.54rem;
+    padding-left: 24px;
+  }
+
+  @media (min-width: $large-screen-width) {
+    padding-left: 0;
+  }
+}
+
+// Offers Section List
+
+.offers__list {
+  @extend %list;
+  padding-left: 36px;
+  padding-right: 16px;
+
+  @media (min-width: $medium-screen-width) {
+    padding-right: 220px;
+  }
+
+  @media (min-width: $large-screen-width) {
+    padding-right: 70px;
+  }
+}
+
+.offers__list-item {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 0.7rem;
+  }
+
+  &::before {
+    @include pseudo;
+    @include size(0.75rem);
+    @include absolute-pos($top: 9px, $left: -30px);
+    transform: translate(-50%, -50%);
+    background-color: $secondary-accent-color;
+  }
+
+  @media (min-width: $medium-screen-width) {
+    &:not(:last-child) {
+      margin-bottom: 0.92rem;
+    }
+
+    &::before {
+      top: 11px;
+    }
+  }
+}
+
+.offers__item-info {
+  margin: 0;
+  line-height: 1.429;
+  letter-spacing: -0.04em;
+
+  @media (min-width: $medium-screen-width) {
+    @include font-settings(1rem, 1.375);
+  }
+
+  @media (min-width: $large-screen-width) {
+    @include font-settings(1.125rem, 1.24);
+  }
+}

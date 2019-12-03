@@ -1,0 +1,145 @@
+// *** HEADER ***
+.homePage-header {
+  @include bg-image(
+    "../../pages/HomePage/components/Header/images/header-bg.jpg"
+  );
+  // background-image: url(./images/header-bg.jpg);
+}
+
+.homePage-header__wrapper {
+  padding-top: 24px;
+  padding-bottom: 4px;
+
+  // @media (min-width: $medium-screen-width) {
+  //   padding: 34px 74px 26px;
+  // }
+
+  // @media (min-width: $large-screen-width) {
+  //   padding-top: 31px;
+  //   padding-right: 133px;
+  //   padding-bottom: 52px;
+  // }
+}
+
+.homePage-header__inner {
+  @media (min-width: $medium-screen-width) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+// *** LOGO ***
+.logo {
+  margin: 0;
+}
+
+.logo__link {
+  @extend %link;
+  @include font-settings($size-10, 1.225);
+  color: $light-text;
+  font-weight: normal;
+}
+
+// *** INFO BLOCK ***
+.header__info-block {
+  padding: 48px 0;
+  color: $light-text;
+
+  // @media (min-width: $medium-screen-width) {
+  //   padding-top: 19px;
+  //   padding-bottom: 0;
+  // }
+
+  @media (min-width: $large-screen-width) {
+    flex-basis: 586px;
+  }
+}
+
+// ** Header Subject **
+
+.header__subject {
+  @include font-settings($size-8, 1.229);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+
+  &--bold {
+    font-weight: bold;
+  }
+
+  @media (min-width: $large-screen-width) {
+    @include font-settings($size-12, 1.229);
+  }
+
+  //   &--bold {
+  //     // @include font-settings(1.125rem, 1.44);
+  //     margin-bottom: 1.6rem;
+  //     padding-right: 0;
+  //     letter-spacing: 0em;
+  //   }
+  // }
+
+  // @media (min-width: $large-screen-width) {
+  //   // @include font-settings(1.25rem, 1.5);
+  //   margin-bottom: 2.3rem;
+  //   padding-right: 10px;
+
+  //   &--med {
+  //     // @include font-settings(2.188rem, 1.34);
+  //     margin-bottom: 1.8rem;
+  //     padding-right: 30px;
+  //   }
+  // }
+}
+
+// ** Header Lead **
+
+.header__lead {
+  @include font-settings($size-5, 1.4);
+  margin-top: 0;
+  margin-bottom: 2rem;
+
+  // @media (min-width: $medium-screen-width) {
+  //   // @include font-settings(2.5rem, 1.25);
+  //   margin-bottom: 1.2rem;
+  //   letter-spacing: -0.046em;
+  // }
+}
+
+// ** Header Meeting **
+
+.header__stats-link-wrapper {
+  @media (max-width: $medium-screen-width) {
+    text-align: center;
+  }
+
+  // @media (min-width: $medium-screen-width) {
+  //   margin-bottom: 0;
+  // }
+
+  // @media (min-width: $large-screen-width) {
+  //   // @include font-settings(1.826rem, 2);
+  // }
+}
+
+.header__stats-link {
+  @extend %link;
+  @include button($main-ligth-theme-color, $blue-text, 154px);
+
+  // @media (min-width: $medium-screen-width) {
+  //   margin-bottom: 0;
+  // }
+
+  // @media (min-width: $large-screen-width) {
+  //   @include font-settings(1.826rem, 2);
+  // }
+}
+
+// *** APPLICATION FORM SECTION ***
+
+.page-header__img {
+  @media (min-width: $large-screen-width) {
+    width: 360px;
+  }
+}

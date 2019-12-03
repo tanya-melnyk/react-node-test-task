@@ -1,0 +1,64 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $main-font-stack;
+  color: $primary-dark-text;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: $small-container;
+  margin: 0 auto;
+  padding-left: $medium-padding;
+  padding-right: $medium-padding;
+
+  @media (min-width: $medium-screen-width) {
+    width: $medium-container;
+    padding-left: $medium-padding;
+    padding-right: $medium-padding;
+  }
+
+  @media (min-width: $large-screen-width) {
+    width: $large-container;
+    padding-left: $small-padding;
+    padding-right: $small-padding;
+  }
+}
+
+// new line hacks
+
+// .new-line__tablet {
+//   display: block;
+
+//   @media (min-width: $medium-screen-width) {
+//     display: inline;
+//   }
+// }
+
+// .new-line__desktop {
+//   display: block;
+
+//   @media (min-width: $large-screen-width) {
+//     display: inline;
+//   }
+// }
+
+// no wrap hack
+
+// .no-wrap {
+//   white-space: nowrap;
+// }

@@ -1,0 +1,28 @@
+// *** HEADER ***
+.page-header {
+  background-color: $main-bg-color;
+}
+
+.page-header__wrapper {
+  padding-top: 20px;
+  padding-bottom: 17px;
+
+  @media (min-width: $medium-screen-width) {
+    padding: 34px 74px 26px;
+  }
+
+  @media (min-width: $large-screen-width) {
+    padding-top: 31px;
+    padding-right: 133px;
+    padding-bottom: 52px;
+  }
+}
+
+.page-header__inner {
+  @media (min-width: $large-screen-width) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 34px;
+  }
+}
