@@ -24,5 +24,3 @@ Server will run on [http://localhost:3001](http://localhost:3001).
 
 Run both applications together.<br />
 The React application will run on port 3000 and the server port 3001.
-
-## Learn More
