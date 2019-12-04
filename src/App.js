@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-import HomePage from "../../pages/HomePage";
-import UsersStatsPage from "../../pages/UsersStatsPage";
-import UserPage from "../../pages/UserPage";
+import HomePage from "./pages/HomePage";
+import UsersStatsPage from "./pages/UsersStatsPage";
+import UserPage from "./pages/UserPage";
 
-import routes from "../../routes";
+import routes from "./routes";
 
 const App = () => (
   <BrowserRouter>

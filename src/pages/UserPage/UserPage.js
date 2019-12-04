@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import T from "prop-types";
 
-import Breadcrumbs from "../components/Breadcrumbs";
-import StatsChart from "../components/StatsChart";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import StatsChart from "../../components/StatsChart";
 
-import formatUserStats from "../services/formatUserStats";
-import getQuery from "../services/getQuery";
-import usersStatsApi from "../services/usersStatsApi";
+import formatUserStats from "../../services/formatUserStats";
+import getQuery from "../../services/getQuery";
+import usersStatsApi from "../../services/usersStatsApi";
 
 export default class UserPage extends Component {
   static propTypes = {

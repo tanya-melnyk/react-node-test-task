@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import T from "prop-types";
 
-import Breadcrumbs from "../components/Breadcrumbs";
-import Paginator from "../components/Paginator";
-import UsersTable from "../components/UsersTable";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import Paginator from "../../components/Paginator";
+import UsersTable from "../../components/UsersTable";
 
-import getQuery from "../services/getQuery";
-import usersStatsApi from "../services/usersStatsApi";
-import routes from "../routes";
+import getQuery from "../../services/getQuery";
+import usersStatsApi from "../../services/usersStatsApi";
+import routes from "../../routes";
 
 export default class UsersStatsPage extends Component {
   static propTypes = {
