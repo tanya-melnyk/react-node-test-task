@@ -1,0 +1,30 @@
+.simple-footer {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  color: $light-text;
+  background-color: $very-dark-blue;
+}
+
+.simple-footer__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (min-width: $medium-screen-width) {
+    justify-content: space-between;
+  }
+}
+
+// *** LOGO ***
+.logo {
+  &--simple-footer {
+    @include font-settings($size-6, 1.208);
+  }
+}
+
+.logo__link {
+  &--simple-footer {
+    @include font-settings($size-6, 1.208);
+  }
+}

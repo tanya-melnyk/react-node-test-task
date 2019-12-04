@@ -1,20 +1,20 @@
 const fs = require("fs");
+var moment = require("moment");
 
 const usersPath = "server/data/users.json";
 const usersStatsPath = "server/data/users_statistic.json";
 
-const getUserStats = (stats, userId, dateFrom, dateTo) =>
+const getUserStats = (stats, userId, startDate, endDate) =>
   stats.reduce(
     (acc, stat) => {
       if (stat.user_id !== userId) {
         return acc;
       }
 
-      const unixDateFrom = new Date(dateFrom).getTime();
-      const unixDateTo = new Date(dateTo).getTime();
-      const unixStatsDate = new Date(stat.date).getTime();
+      const startTime = moment(startDate).startOf("day");
+      const endTime = moment(endDate).endOf("day");
 
-      if (unixStatsDate < unixDateFrom || unixStatsDate > unixDateTo) {
+      if (!moment(stat.date).isBetween(startTime, endTime, null, "[]")) {
         return acc;
       }
 
@@ -34,8 +34,8 @@ const getUserStats = (stats, userId, dateFrom, dateTo) =>
     }
   );
 
-const createUserWithStats = (user, stats, dateFrom, dateTo) => {
-  const userStats = getUserStats(stats, user.id, dateFrom, dateTo);
+const createUserWithStats = (user, stats, startDate, endDate) => {
+  const userStats = getUserStats(stats, user.id, startDate, endDate);
 
   return {
     name: `${user.first_name} ${user.last_name}`,
@@ -46,8 +46,13 @@ const createUserWithStats = (user, stats, dateFrom, dateTo) => {
 
 const getUserStatsById = (req, res) => {
   const userId = Number(req.params.id);
-  const dateFrom = req.query.from;
-  const dateTo = req.query.to;
+
+  if (!userId || userId < 1) {
+    return res.status(404).json({ status: "User ID not valid" });
+  }
+
+  const startDate = req.query.from;
+  const endDate = req.query.to;
 
   const usersData = fs.readFileSync(usersPath);
   const users = JSON.parse(usersData.toString());
@@ -55,7 +60,7 @@ const getUserStatsById = (req, res) => {
   const userById = users.find(user => user.id === userId);
 
   if (!userById) {
-    return res.status(200).json({ status: "User Not Found" });
+    return res.status(404).json({ status: "User Not Found" });
   }
 
   const usersStatsData = fs.readFileSync(usersStatsPath);
@@ -64,8 +69,8 @@ const getUserStatsById = (req, res) => {
   const userWithStats = createUserWithStats(
     userById,
     usersStats,
-    dateFrom,
-    dateTo
+    startDate,
+    endDate
   );
 
   const response = {

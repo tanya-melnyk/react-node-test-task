@@ -32,16 +32,24 @@ const createUsersWithStats = (users, stats) =>
   });
 
 const getAllUsers = (req, res) => {
-  const page = Number(req.query.page) || 1;
-  const limit = Number(req.query.limit) || 50;
+  const page = Number(req.query.page);
+  const limit = Number(req.query.limit);
+
+  if (!page || page < 1 || !limit) {
+    return res.status(404).json({ status: "Inalid query" });
+  }
 
   const usersData = fs.readFileSync(usersPath);
   const users = JSON.parse(usersData.toString());
+  const usersByQuery = users.slice(limit * (page - 1), limit * page);
+
+  if (!usersByQuery.length) {
+    return res.status(404).json({ status: "Inalid query" });
+  }
 
   const usersStatsData = fs.readFileSync(usersStatsPath);
   const usersStats = JSON.parse(usersStatsData.toString());
 
-  const usersByQuery = users.slice(limit * (page - 1), limit * page);
   const usersWithStats = createUsersWithStats(usersByQuery, usersStats);
 
   const response = {

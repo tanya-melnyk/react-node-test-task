@@ -1,49 +1,13 @@
-// this file needs refactoring
+import moment from "moment";
 
 const formatUserStats = (user, dateFrom, dateTo) => {
-  const unixDateFrom = new Date(dateFrom).getTime();
-  const unixDateTo = new Date(dateTo).getTime();
+  const daysCountFrom = getDaysCount(dateFrom);
+  const daysCountTo = getDaysCount(dateTo);
 
-  const daysFrom = countDays(unixDateFrom);
-  const daysTo = countDays(unixDateTo);
+  const getFormattedData = getFormatSetter(daysCountFrom, daysCountTo);
 
-  let clicks = [];
-  const clicksDates = user.clicks.map(click => click.date);
-
-  let page_views = [];
-  const pageViewsDates = user.page_views.map(view => view.date);
-
-  for (let dayCount = daysFrom; dayCount <= daysTo; dayCount += 1) {
-    const dateIdx = clicksDates.indexOf(getDateFromDays(dayCount));
-
-    if (dateIdx >= 0) {
-      clicks[dayCount - daysFrom] = {
-        date: user.clicks[dateIdx].date,
-        number: user.clicks[dateIdx].number
-      };
-    } else {
-      clicks[dayCount - daysFrom] = {
-        date: getDateFromDays(dayCount),
-        number: 0
-      };
-    }
-  }
-
-  for (let dayCount = daysFrom; dayCount <= daysTo; dayCount += 1) {
-    const dateIdx = pageViewsDates.indexOf(getDateFromDays(dayCount));
-
-    if (dateIdx >= 0) {
-      page_views[dayCount - daysFrom] = {
-        date: user.page_views[dateIdx].date,
-        number: user.page_views[dateIdx].number
-      };
-    } else {
-      page_views[dayCount - daysFrom] = {
-        date: getDateFromDays(dayCount),
-        number: 0
-      };
-    }
-  }
+  const clicks = getFormattedData(user.clicks);
+  const page_views = getFormattedData(user.page_views);
 
   return {
     name: user.name,
@@ -52,17 +16,34 @@ const formatUserStats = (user, dateFrom, dateTo) => {
   };
 };
 
-const countDays = unixDate => unixDate / 1000 / 60 / 60 / 24;
+const getDaysCount = date => {
+  const unixDate = moment(date).valueOf();
+
+  return moment.duration(unixDate).asDays();
+};
+
+const getFormatSetter = (daysCountFrom, daysCountTo) => arr => {
+  const resArr = [];
+  const dates = arr.map(el => el.date);
+
+  for (let i = 0; i <= daysCountTo - daysCountFrom; i += 1) {
+    const date = getDateFromDays(daysCountFrom + i);
+    const dateIdx = dates.indexOf(date);
+
+    if (dateIdx >= 0) {
+      resArr[i] = { date, number: arr[dateIdx].number };
+    } else {
+      resArr[i] = { date, number: 0 };
+    }
+  }
+
+  return resArr;
+};
 
 const getDateFromDays = daysCount => {
-  const unixDate = daysCount * 24 * 60 * 60 * 1000;
-  const date = new Date(unixDate);
+  const unixDate = moment.duration(daysCount, "days").as("milliseconds");
 
-  let result = date.getFullYear() + "-";
-  result += date.getMonth() + 1 + "-";
-  result += date.getDate() > 10 ? date.getDate() : "0" + date.getDate();
-
-  return result;
+  return moment(unixDate).format("YYYY-MM-DD");
 };
 
 export default formatUserStats;

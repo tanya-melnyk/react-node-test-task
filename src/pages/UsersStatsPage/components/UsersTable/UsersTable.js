@@ -1,10 +1,8 @@
 import React from "react";
 import T from "prop-types";
 
-import style from "./style.module.css";
-
 const UrersTable = ({ users, onRowClick }) => (
-  <table className={style.usersTable}>
+  <table className="usersTable">
     <thead>
       <tr>
         <th>Id</th>
@@ -21,7 +19,7 @@ const UrersTable = ({ users, onRowClick }) => (
     <tbody>
       {users.map(user => (
         <tr
-          className={style.urersTableRow}
+          className="urersTableRow"
           key={user.id}
           onClick={() => onRowClick(user.id)}
         >

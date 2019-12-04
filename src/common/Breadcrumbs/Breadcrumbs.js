@@ -13,6 +13,14 @@ const useStyles = makeStyles(theme => ({
     "& > * + *": {
       marginTop: theme.spacing(2)
     }
+  },
+  typo: {
+    color: "#3A80BA",
+    lineHeight: 1.25
+  },
+  link: {
+    color: "#ccc",
+    lineHeight: 1.25
   }
 }));
 
@@ -26,10 +34,10 @@ export default function CustomSeparator({ userName }) {
   return (
     <div className={classes.root}>
       <Breadcrumbs
-        separator={<NavigateNextIcon fontSize="small" />}
+        separator={<NavigateNextIcon fontSize="small" className={classes.link} />}
         aria-label="breadcrumb"
       >
-        <Link color="inherit" href={routes.HOME} onClick={handleClick}>
+        <Link className={classes.link} href={routes.HOME} onClick={handleClick}>
           Main page
         </Link>
 
@@ -37,18 +45,18 @@ export default function CustomSeparator({ userName }) {
           [
             <Link
               key="Link"
-              color="inherit"
+              className={classes.link}
               href={routes.USERS}
               onClick={handleClick}
             >
               User Statistics
             </Link>,
-            <Typography key="Typography" color="textPrimary">
+            <Typography className={classes.typo} key="Typography">
               {userName}
             </Typography>
           ]
         ) : (
-          <Typography color="textPrimary">User Statistics</Typography>
+          <Typography className={classes.typo}>User Statistics</Typography>
         )}
       </Breadcrumbs>
     </div>

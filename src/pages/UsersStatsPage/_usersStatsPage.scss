@@ -1,0 +1,14 @@
+.stats-page__wrapper {
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+
+.stats-page__title {
+  @include font-settings($size-8, 1.219);
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.paginator {
+  text-align: center;
+}

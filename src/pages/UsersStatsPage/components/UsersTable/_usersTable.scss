@@ -1,9 +1,8 @@
 .usersTable {
-  width: 90%;
-  box-shadow: 0px 1px 4px 0px rgba(184, 184, 184, 1);
+  width: 100%;
   border-width: 1px;
   border-collapse: collapse;
-  border-radius: 4px;
+  border-radius: $small-radius;
   overflow: hidden;
 }
 
@@ -12,7 +11,7 @@
 }
 
 .usersTable tr:nth-child(even) {
-  background-color: #f1f1f1;
+  background-color: $secondary-ligth-theme-color;
 }
 
 .usersTable th {
@@ -21,7 +20,6 @@
   font-size: 13px;
   font-weight: 500;
   color: #fff;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
   text-align: center;
   border-right: 1px solid #fff;
@@ -32,10 +30,9 @@
 }
 
 .usersTable td {
-  padding: 10px 10px;
-  font-size: 14px;
+  padding: 6px 10px;
+  line-height: 1.25;
   text-align: center;
   border-left: 1px solid #fff;
   border-collapse: collapse;
-  color: #85888a;
 }

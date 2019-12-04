@@ -2,7 +2,7 @@ import React from "react";
 import ReactPaginate from "react-paginate";
 import T from "prop-types";
 
-const Paginator = ({ pageCount, handlePageClick }) => (
+const Paginator = ({ pageCount, handlePageClick, initialPage }) => (
   <div className="reactPaginate">
     <ReactPaginate
       previousLabel={"<"}
@@ -16,12 +16,15 @@ const Paginator = ({ pageCount, handlePageClick }) => (
       containerClassName="pagination"
       subContainerClassName="pages pagination"
       activeClassName="active"
+      initialPage={initialPage}
+      disableInitialCallback={true}
     />
   </div>
 );
 
 Paginator.propTypes = {
   pageCount: T.number.isRequired,
+  initialPage: T.number.isRequired,
   handlePageClick: T.func.isRequired
 };
 

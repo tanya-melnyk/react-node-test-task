@@ -1,5 +1,6 @@
 const apiUri = "/api/users";
-const errMsg = "An error occured while loading";
+const errMsg = "Not Found";
+// const errMsg = "An error occured while loading";
 
 const getAllUsers = (page, limit) =>
   fetch(`${apiUri}?page=${page}&limit=${limit}`)
@@ -14,8 +15,8 @@ const getAllUsers = (page, limit) =>
       throw err;
     });
 
-const getUserStats = (userId, dateFrom, dateTo) =>
-  fetch(`${apiUri}/${userId}?from=${dateFrom}&to=${dateTo}`)
+const getUserStats = (userId, startDate, endDate) =>
+  fetch(`${apiUri}/${userId}?from=${startDate}&to=${endDate}`)
     .then(res => {
       if (res.ok) {
         return res.json();

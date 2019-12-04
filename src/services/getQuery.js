@@ -1,4 +1,4 @@
 const getQuery = (queryStr, queryName) =>
-  new URLSearchParams(queryStr).get(queryName);
+  Number.parseInt(new URLSearchParams(queryStr).get(queryName), 10);
 
 export default getQuery;
