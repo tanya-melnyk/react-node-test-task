@@ -1,0 +1,96 @@
+.homePage-footer {
+  @include bg-image(
+    "../../pages/HomePage/components/Footer/images/footer-bg.jpg"
+  );
+}
+
+.homePage-footer__wrapper {
+  padding-top: 26px;
+  padding-bottom: 30px;
+}
+
+.subscribe-form__wrapper {
+  height: 120px;
+  margin-bottom: 24px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color: $main-ligth-theme-color;
+  border-radius: 10px;
+  border: 1px solid $grey-accent-color;
+
+  @media (min-width: $medium-screen-width) {
+    width: 579px;
+    height: 64px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: none;
+  }
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.subscribe-form__input {
+  width: 272px;
+  height: 56px;
+  font-size: $size-5;
+  text-indent: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+
+  &::placeholder {
+    font-size: $size-4;
+    text-indent: 10px;
+    color: $grey;
+  }
+
+  &:focus {
+    box-shadow: 0 0 3px $main-theme-color;
+  }
+
+  @media (min-width: $medium-screen-width) {
+    width: 394px;
+  }
+}
+
+.subscribe-form__submit-btn {
+  @include button($main-theme-color, $light-text, 272px);
+
+  @media (min-width: $medium-screen-width) {
+    width: 176px;
+  }
+}
+
+// *** INFO BLOCK ***
+.homePage-footer__infoBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: $light-text;
+
+  @media (min-width: $medium-screen-width) {
+    justify-content: space-between;
+  }
+}
+
+// *** LOGO ***
+.logo__link {
+  &--footer {
+    @include font-settings($size-8, 1.219);
+  }
+}
+
+// *** COPYRIGHT ***
+.footer__copyright {
+  margin: 0;
+  line-height: 1.438;
+}

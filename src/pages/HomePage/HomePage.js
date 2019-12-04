@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import BenefitsSection from "./components/BenefitsSection";
 import LearnMoreSection from "./components/LearnMoreSection";
 import PricesSection from "./components/PricesSection";
+import Footer from "./components/Footer";
 
 const HomePage = ({ location }) => (
   <>
@@ -14,7 +15,7 @@ const HomePage = ({ location }) => (
       <LearnMoreSection location={location} />
       <PricesSection location={location} />
     </main>
-    {/* <Footer/> */}
+    <Footer />
   </>
 );
 

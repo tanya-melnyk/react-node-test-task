@@ -1,30 +1,21 @@
-/*
-   Import partials below
-*/
 @charset 'utf-8';
 
 // Utilities (abstacts, helpers)
-@import './utils/variables';
-@import './utils/mixins';
-@import './utils/placeholders';
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/placeholders";
 
 // Base styles
-@import './base/normalize';
-@import './base/base';
+@import "./base/normalize";
+@import "./base/base";
 
 // Components (modules)
 // HOME PAGE
-@import '../pages/HomePage/components/Header/header';
-@import '../pages/HomePage/components/BenefitsSection/benefitsSection';
-@import '../pages/HomePage/components/LearnMoreSection/learnMoreSection';
-@import '../pages/HomePage/components/PricesSection/pricesSection';
-// @import './components/header/logo';
-// @import './components/header/info-block';
-// @import './components/header/application-form';
-// @import './components/section-one';
-// @import './components/section-two';
-// @import './components/section-three';
-// @import './components/section-four';
-// @import './components/section-five';
-// @import './components/footer';
-// 
+@import "../pages/HomePage/components/Header/header";
+@import "../pages/HomePage/components/BenefitsSection/benefitsSection";
+@import "../pages/HomePage/components/LearnMoreSection/learnMoreSection";
+@import "../pages/HomePage/components/PricesSection/pricesSection";
+@import "../pages/HomePage/components/Footer/footer";
+
+//COMMON
+@import "../common/Paginator/paginator";

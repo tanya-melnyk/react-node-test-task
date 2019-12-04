@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import T from "prop-types";
 
-import Breadcrumbs from "../../components/Breadcrumbs";
-import Paginator from "../../components/Paginator";
-import UsersTable from "../../components/UsersTable";
+import Breadcrumbs from "../../common/Breadcrumbs";
+import Paginator from "../../common/Paginator";
+import UsersTable from "./components/UsersTable";
 
 import getQuery from "../../services/getQuery";
 import usersStatsApi from "../../services/usersStatsApi";
@@ -91,7 +91,7 @@ export default class UsersStatsPage extends Component {
     const { location } = this.props;
 
     return (
-      <div>
+      <div className="container">
         {error && <p>{error.message}</p>}
 
         <Breadcrumbs />
@@ -100,6 +100,7 @@ export default class UsersStatsPage extends Component {
 
         {users.length > 0 && (
           <div>
+            <h2>Users statistic</h2>
             <UsersTable
               users={users}
               location={location}

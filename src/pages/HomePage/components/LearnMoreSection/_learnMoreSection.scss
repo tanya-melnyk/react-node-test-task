@@ -61,28 +61,15 @@
 .learn-more-section__link {
   @extend %link;
   @include button($main-ligth-theme-color, $blue-text, 221px);
-
-  // @media (min-width: $medium-screen-width) {
-  //   margin-bottom: 0;
-  // }
-
-  // @media (min-width: $large-screen-width) {
-  //   @include font-settings(1.826rem, 2);
-  // }
 }
 
 // *** MACBOOK IMAGE ***
-
-// .learn-more-section__img-wrapper {
-
-// }
-
 .learn-more-section__img {
   @media (min-width: $medium-screen-width) {
     width: 690px;
   }
 
   @media (min-width: $large-screen-width) {
-    @include absolute-pos($top: -31.5%, $left: 42%);
+    @include absolute-pos($top: -31%, $left: 42%);
   }
 }

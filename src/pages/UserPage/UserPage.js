@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import T from "prop-types";
 
-import Breadcrumbs from "../../components/Breadcrumbs";
-import StatsChart from "../../components/StatsChart";
+import Breadcrumbs from "../../common/Breadcrumbs";
+import StatsChart from "./components/StatsChart";
 
 import formatUserStats from "../../services/formatUserStats";
 import getQuery from "../../services/getQuery";
@@ -69,7 +69,7 @@ export default class UserPage extends Component {
     const { user, error, loading } = this.state;
 
     return (
-      <div>
+      <div className="container">
         {error && <p>{error.message}</p>}
 
         {loading && <p>Loading...</p>}

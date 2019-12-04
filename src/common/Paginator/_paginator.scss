@@ -5,12 +5,14 @@
 }
 
 .reactPaginate li {
+  @include size(3rem);
   display: inline-block;
-  padding: 5px 0;
-  margin: 5px;
+  margin: 4px;
+  text-align: center;
+  line-height: 3rem;
   cursor: pointer;
-  border: 1px solid #eee;
-  border-radius: 5px;
+  border: 2px solid $secondary-ligth-theme-color;
+  border-radius: 8px;
 }
 
 .reactPaginate li a {
@@ -19,9 +21,8 @@
 }
 
 .active {
-  background: #3A80BA;
-  color: #fff;
-  font-weight: bold;
+  background: $main-theme-color;
+  color: $light-text;
 }
 
 .breakMe {

@@ -11,33 +11,6 @@
   list-style: none;
 }
 
-/// common properties for all section titles
-%section-title {
-  // @include font-settings(1.25rem, 1.5);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-
-  @media (min-width: $medium-screen-width) {
-    // @include font-settings(1.875rem, 1.333);
-  }
-
-  @media (min-width: $large-screen-width) {
-    // @include font-settings(3rem, 1.25);
-  }
-}
-
-/// double box-shadow section-2 mob&tab
-%double-shadow-small {
-  box-shadow: 0px 15px 32px 0px rgba(0, 0, 0, 0.16),
-    -19px 15px 0px 0px rgba(230, 233, 235, 1);
-}
-
-/// double box-shadow for section-2 desc, section-3 tab&desc, section-5 mob&tab
-%double-shadow-big {
-  box-shadow: 0px 15px 46px 0px rgba(0, 0, 0, 0.16),
-    -18px 18px 0px 0px rgb(230, 233, 235);
-}
-
 /// flex items to be positioned with even spaces between the lines
 %flex-justify {
   display: flex;
