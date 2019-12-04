@@ -1,62 +1,44 @@
 import React from "react";
 
-import mobileImg from "./images/mobile.png";
-import routes from "../../../../routes";
-
-const Header = ({ location }) => {
+const BenefitsSection = () => {
   return (
-    <header className="homePage-header">
-      <div className="homePage-header__wrapper container">
-        <h1 className="logo">
-          <Link className="logo__link" to={routes.HOME}>
-            AppCo
-          </Link>
-        </h1>
+    <section className="benefits-section container">
+      <header className="benefits-section__header">
+        <h2 className="benefits-section__title">
+          Why{" "}
+          <span className="benefits-section__title--bold">
+            small business owners love
+          </span>{" "}
+          AppCo?
+        </h2>
+        <p className="benefits-section__lead benefits__lead">
+          Our design projects are fresh and simple and will benefit your
+          business greatly. Learn more about our work!
+        </p>
+      </header>
 
-        <div className="homePage-header__inner">
-          {/* *** INFO BLOCK ***  */}
-
-          <div className="header__info-block">
-            <h2 className="header__subject">
-              <span className="header__subject header__subject--bold">
-                Brainstorming
-              </span>{" "}
-              for desired perfect Usability
-            </h2>
-            <p className="header__lead">
-              Our design projects are fresh and simple and will benefit your
-              business greatly. Learn more about our work!
-            </p>
-
-            <div className="header__stats-link-wrapper">
-              <Link className="header__stats-link"
-                to={{
-                  state: { from: location },
-                  pathname: routes.USERS
-                }}
-              >
-                View Stats
-              </Link>
-            </div>
-          </div>
-
-          {/* *** Mobile Image *** */}
-          <picture className="page-header__image-wrapper">
-            <img
-              className="page-header__img"
-              src={mobileImg}
-              alt="smartphone screen"
-              width="280"
-            />
-          </picture>
-        </div>
-      </div>
-    </header>
+      <ul className="benefits__list">
+        <li className="benefit__item">
+          <h3 className="benefit__name benefit__name--design">Clean Design</h3>
+          <p className="benefit__desc">
+            Increase sales by showing true dynamics of your website.
+          </p>
+        </li>
+        <li className="benefit__item">
+          <h3 className="benefit__name benefit__name--security">Secure Data</h3>
+          <p className="benefit__desc">
+            Build your online store’s trust using Social Proof & Urgency.
+          </p>
+        </li>
+        <li className="benefit__item">
+          <h3 className="benefit__name benefit__name--retina">Retina Ready</h3>
+          <p className="benefit__desc">
+            Realize importance of social proof in customer’s purchase decision.
+          </p>
+        </li>
+      </ul>
+    </section>
   );
 };
 
-Header.propTypes = {
-  location: T.shape().isRequired
-};
-
-export default Header;
+export default BenefitsSection;

@@ -103,14 +103,40 @@
   }
 }
 
-/// Helper for generating icons with pseudo-class
+/// Helper for generating icons with pseudo-class for Benefits Section
 /// @example scss - how to use
 /// $icons: clock, web, monitor, book, house, box;
 /// @include generate-pseudo-icons('services__icon--', $icons, '../images/services_icons/', 'svg');
-@mixin generate-pseudo-icons($baseclass, $list, $path, $ext) {
+@mixin generate-pseudo-icons-BS($baseclass, $list, $path, $ext) {
   @each $icon in $list {
     .#{$baseclass}#{$icon}::before {
       background-image: url(#{$path}#{$icon}.#{$ext});
+      content: "";
+      display: block;
+      width: 106px;
+      height: 96px;
+      margin: 0 auto 42px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+/// Helper for generating icons with pseudo-class for Prices Section
+/// @example scss - how to use
+/// $icons: clock, web, monitor, book, house, box;
+/// @include generate-pseudo-icons('services__icon--', $icons, '../images/services_icons/', 'svg');
+@mixin generate-pseudo-icons-PS($baseclass, $list, $path, $ext) {
+  @each $icon in $list {
+    .#{$baseclass}#{$icon}::after {
+      background-image: url(#{$path}#{$icon}.#{$ext});
+      content: "";
+      display: block;
+      width: 210px;
+      height: 122px;
+      margin: 19px auto 0;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 }

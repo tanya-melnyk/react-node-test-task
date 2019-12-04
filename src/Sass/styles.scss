@@ -13,7 +13,11 @@
 @import './base/base';
 
 // Components (modules)
+// HOME PAGE
 @import '../pages/HomePage/components/Header/header';
+@import '../pages/HomePage/components/BenefitsSection/benefitsSection';
+@import '../pages/HomePage/components/LearnMoreSection/learnMoreSection';
+@import '../pages/HomePage/components/PricesSection/pricesSection';
 // @import './components/header/logo';
 // @import './components/header/info-block';
 // @import './components/header/application-form';

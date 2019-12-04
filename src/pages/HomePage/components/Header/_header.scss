@@ -107,10 +107,10 @@
   // }
 }
 
-// ** Header Meeting **
+// ** Header Stats Link **
 
 .header__stats-link-wrapper {
-  @media (max-width: $medium-screen-width) {
+  @media (max-width: ($medium-screen-width - 1px)) {
     text-align: center;
   }
 
@@ -136,7 +136,7 @@
   // }
 }
 
-// *** APPLICATION FORM SECTION ***
+// *** SMARTPFONE IMAGE ***
 
 .page-header__img {
   @media (min-width: $large-screen-width) {

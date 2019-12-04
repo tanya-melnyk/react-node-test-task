@@ -1,0 +1,191 @@
+.prices-section {
+  padding-top: 59px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.prices-section__wrapper {
+  @include bg-image(
+    "../../pages/HomePage/components/PricesSection/images/section-bg.jpg",
+    $size: contain,
+    $pos: right
+  );
+}
+
+.prices-section__inner {
+  padding-top: 21px;
+}
+
+/* -- Section headers -- */
+
+.prices-section__header {
+  margin-bottom: 2rem;
+}
+
+.prices-section__title {
+  @include font-settings($size-6, 1.219);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+
+  &--bold {
+    display: block;
+    font-weight: bold;
+  }
+
+  @media (min-width: $medium-screen-width) {
+    @include font-settings($size-8, 1.219);
+  }
+}
+
+.prices-section__lead {
+  @include font-settings($size-4, 1.4);
+  margin: 0;
+  color: $secondary-dark-text;
+
+  @media (min-width: $medium-screen-width) {
+    @include font-settings($size-5, 1.4);
+    margin-right: auto;
+    margin-left: auto;
+    width: 664px;
+  }
+
+  // @media (min-width: $large-screen-width) {
+  //   margin-right: auto;
+  //   margin-left: auto;
+  //   width: 780px;
+  // }
+}
+
+/* -- list of packages -- */
+
+.packages__list {
+  @extend %list;
+  margin-bottom: 32px;
+
+  @media (min-width: $medium-screen-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.package__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  padding-bottom: 40px;
+  padding-right: 26px;
+  padding-left: 26px;
+  width: 280px;
+  height: 627px;
+  background-color: $main-ligth-theme-color;
+  border-radius: $small-radius * 4;
+  border: 2px solid $secondary-ligth-theme-color;
+  transition: {
+    duration: 200ms;
+    property: box-shadow;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  }
+
+  &:hover .package__price,
+  &:focus .package__price {
+    @include font-settings($size-14, 1.214);
+    color: $blue-text;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $medium-screen-width) {
+    width: 380px;
+    padding-right: 79px;
+    padding-left: 79px;
+  }
+
+  @media (min-width: $large-screen-width) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+}
+
+/* -- packages icons -- */
+
+$icons: basic, standard, unlimited;
+@include generate-pseudo-icons-PS(
+  "package__name--",
+  $icons,
+  "../../pages/HomePage/components/PricesSection/images/",
+  "svg"
+);
+
+/* -- packages info -- */
+
+.package__name {
+  @include font-settings($size-6, 1.208);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.package__price {
+  @include font-settings($size-12, 1.229);
+  display: block;
+  font-weight: bold;
+
+  transition: {
+    duration: 200ms;
+    property: all;
+  }
+}
+
+.package__desc-list {
+  @extend %list;
+  margin-bottom: 24px;
+  color: $secondary-dark-text;
+  line-height: 1.625;
+
+  &::before {
+    @include pseudo();
+    width: 250px;
+    height: 1px;
+    margin-bottom: 24px;
+    background: linear-gradient(
+      90deg,
+      $main-ligth-theme-color 0%,
+      $grey-accent-color 51%,
+      $main-ligth-theme-color 100%
+    );
+    // background-color: $secondary-ligth-theme-color;
+  }
+}
+
+.package__purchase-btn {
+  @include button($main-theme-color, $light-text, 220px);
+}
+
+.prices-section__footer {
+  @include font-settings($size-5, 1.4);
+  margin: 0;
+  color: $secondary-dark-text;
+}
+
+.prices-section__contact-link {
+  @extend %link;
+  color: $blue-text;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}

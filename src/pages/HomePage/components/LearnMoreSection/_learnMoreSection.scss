@@ -1,0 +1,88 @@
+.learn-more-section {
+  padding-top: 40px;
+  color: $light-text;
+  background: linear-gradient(93.19deg, #255d8b 2.29%, #3a80ba 96.79%);
+
+  @media (min-width: $medium-screen-width) {
+    padding-top: 72px;
+  }
+}
+
+.learn-more-section__wrapper {
+  @media (min-width: $large-screen-width) {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+// *** INFO BLOCK ***
+.learn-more-section__info-block {
+  padding-bottom: 20px;
+
+  @media (min-width: $medium-screen-width) {
+    padding-right: 84px;
+    padding-left: 84px;
+  }
+
+  @media (min-width: $large-screen-width) {
+    flex-basis: 570px;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 80px;
+  }
+}
+
+// ** Learn-more-section Subject **
+
+.learn-more-section__subject {
+  @include font-settings($size-8, 1.219);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+// ** Learn-more-section Lead **
+
+.learn-more-section__lead {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.438;
+}
+
+// ** Learn-more-section Link **
+
+.learn-more-section__link-wrapper {
+  @media (max-width: ($medium-screen-width - 1px)) {
+    text-align: center;
+  }
+}
+
+.learn-more-section__link {
+  @extend %link;
+  @include button($main-ligth-theme-color, $blue-text, 221px);
+
+  // @media (min-width: $medium-screen-width) {
+  //   margin-bottom: 0;
+  // }
+
+  // @media (min-width: $large-screen-width) {
+  //   @include font-settings(1.826rem, 2);
+  // }
+}
+
+// *** MACBOOK IMAGE ***
+
+// .learn-more-section__img-wrapper {
+
+// }
+
+.learn-more-section__img {
+  @media (min-width: $medium-screen-width) {
+    width: 690px;
+  }
+
+  @media (min-width: $large-screen-width) {
+    @include absolute-pos($top: -31.5%, $left: 42%);
+  }
+}
