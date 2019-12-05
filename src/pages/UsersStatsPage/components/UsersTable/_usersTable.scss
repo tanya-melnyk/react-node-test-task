@@ -1,3 +1,13 @@
+.table-wrapper {
+  margin-bottom: 24px;
+
+  @media (max-width: $medium-screen-width - 1) {
+    height: 600px;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+}
+
 .usersTable {
   width: 100%;
   border-width: 1px;
@@ -15,14 +25,18 @@
 }
 
 .usersTable th {
-  padding: 14px 10px;
+  @include font-settings(10px, 1.25);
+  padding: 14px 4px;
   background-color: #3a80ba;
-  font-size: 13px;
-  font-weight: 500;
   color: #fff;
-  letter-spacing: 0.08em;
-  text-align: center;
+  font-weight: normal;
   border-right: 1px solid #fff;
+
+  @media (min-width: $large-screen-width) {
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .usersTable th:last-child {
@@ -30,9 +44,14 @@
 }
 
 .usersTable td {
-  padding: 6px 10px;
-  line-height: 1.25;
+  @include font-settings(10px, 1.25);
+  padding: 6px 4px;
   text-align: center;
   border-left: 1px solid #fff;
   border-collapse: collapse;
+
+  @media (min-width: $large-screen-width) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

@@ -1,23 +1,39 @@
-.reactPaginate ul {
-  display: inline-block;
-  padding-left: 15px;
-  padding-right: 15px;
+.pagination {
+  margin: 0 auto;
+  padding: 0;
 }
 
 .reactPaginate li {
-  @include size(3rem);
+  @include size(1.4rem);
   display: inline-block;
-  margin: 4px;
+  margin: 2px;
   text-align: center;
-  line-height: 3rem;
   cursor: pointer;
-  border: 2px solid $secondary-ligth-theme-color;
-  border-radius: 8px;
+  border: 1px solid $secondary-ligth-theme-color;
+  border-radius: $small-radius / 4;
+
+  @media (min-width: $medium-screen-width) {
+    @include size(3rem);
+    margin: 4px;
+    border-width: 2px;
+    border-radius: $small-radius;
+  }
 }
 
 .reactPaginate li a {
-  padding: 10px;
+  @include font-settings(10px, 1rem);
+  // padding: 10px;
   outline: none;
+
+  &:hover,
+  &:focus {
+    font-weight: bold;
+  }
+
+  @media (min-width: $medium-screen-width) {
+    @include font-settings($size-4, 3rem);
+    padding: 10px;
+  }
 }
 
 .active {
@@ -25,6 +41,14 @@
   color: $light-text;
 }
 
-.breakMe {
-  /* color: red; */
+.reactPaginate .breakMeWrapper,
+.reactPaginate .next,
+.reactPaginate .prev {
+  border: none;
+  color: $blue-text;
+
+  &:hover,
+  &:focus {
+    font-weight: 600;
+  }
 }

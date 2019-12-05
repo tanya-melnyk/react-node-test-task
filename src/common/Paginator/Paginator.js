@@ -7,17 +7,18 @@ const Paginator = ({ pageCount, handlePageClick, initialPage }) => (
     <ReactPaginate
       previousLabel={"<"}
       nextLabel={">"}
-      breakLabel={"..."}
-      breakClassName="breakMe"
+      breakClassName="breakMeWrapper"
       pageCount={pageCount}
       marginPagesDisplayed={1}
-      pageRangeDisplayed={5}
+      pageRangeDisplayed={3}
       onPageChange={handlePageClick}
       containerClassName="pagination"
       subContainerClassName="pages pagination"
       activeClassName="active"
       initialPage={initialPage}
       disableInitialCallback={true}
+      previousClassName="prev"
+      nextClassName="next"
     />
   </div>
 );

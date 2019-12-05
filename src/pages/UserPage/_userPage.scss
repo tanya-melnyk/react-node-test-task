@@ -1,5 +1,7 @@
 .datepickers {
-  display: flex;
+  @media (min-width: $medium-screen-width) {
+    display: flex;
+  }
 }
 
 .datepickers > div {
