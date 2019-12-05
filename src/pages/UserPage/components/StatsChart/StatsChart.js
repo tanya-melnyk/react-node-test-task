@@ -11,7 +11,7 @@ import {
 import T from "prop-types";
 
 const StatsChart = ({ name, data }) => (
-  <div>
+  <div className="stats-chart__wrapper">
     <h3>{name}</h3>
     <ResponsiveContainer width="100%" height={350}>
       <LineChart data={data} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
